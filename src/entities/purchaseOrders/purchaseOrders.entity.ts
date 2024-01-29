@@ -9,13 +9,13 @@ import { Users } from "..";
 
 @Entity()
 export class PurchaseOrder {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
 
-  @ManyToOne(() => Users)
-  @JoinColumn({ name: "user_id" })
-  user: Users;
+  @ManyToOne(() => Users, (users) => users.purchaseOrder)
+  @JoinColumn()
+  user_id: Users;
 
-  @Column({ type: "datetime" })
+  @Column({ type: "timestamp" })
   date: Date;
 }
