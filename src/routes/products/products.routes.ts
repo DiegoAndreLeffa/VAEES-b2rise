@@ -13,6 +13,6 @@ export const productsRouter: Router = Router();
 productsRouter.post("/", postProductsController);
 productsRouter.get("/", getAllProductsController);
 productsRouter.get("/:id", getByIdProductsController);
-productsRouter.get("/:category", getByCategoryProductsController);
+productsRouter.get("/category/:category", getByCategoryProductsController);
 productsRouter.patch("/:id", patchProductsController);
 productsRouter.delete("/:id", deleteProductsController);

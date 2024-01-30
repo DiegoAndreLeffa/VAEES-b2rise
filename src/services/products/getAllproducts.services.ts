@@ -44,13 +44,13 @@ export const listAllProductsService = async (
   const totalPages = Math.ceil(totalCount / pageSize);
 
   const result: tReturnProductsAll = {
-    product: products,
     pageInfo: {
       page,
       pageSize,
       totalCount,
       totalPages,
     },
+    product: products,
   };
 
   return result;
