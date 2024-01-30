@@ -1,6 +1,7 @@
 import "express-async-errors";
 import { handleErrors } from "./errors";
 import express, { Application } from "express";
+import { productsRouter } from "./routes";
 // import swaggerUi from "swagger-ui-express";
 
 // import swaggerDocs from "./swagger.json";
@@ -8,6 +9,8 @@ import express, { Application } from "express";
 const app: Application = express();
 
 app.use(express.json());
+
+app.use("/products", productsRouter);
 
 // app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(handleErrors);
