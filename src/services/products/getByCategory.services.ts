@@ -7,8 +7,6 @@ export const getByCategoryProductsService = async (category: string) => {
   const productsRepository: Repository<Products> =
     AppDataSource.getRepository(Products);
 
-  console.log(category);
-
   const product = await productsRepository.find({
     where: {
       category: category,

@@ -47,7 +47,6 @@ export const getByCategoryProductsController = async (
   req: Request,
   res: Response
 ) => {
-  console.log(req.params.category);
   const listByCategory = await getByCategoryProductsService(
     String(req.params.category)
   );
