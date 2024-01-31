@@ -21,3 +21,5 @@ export const returnAllProductsSchema = z.object({
     totalPages: z.number(),
   }),
 });
+
+export const patchProductSchema = productsSchema.partial();

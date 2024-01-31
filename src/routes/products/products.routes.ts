@@ -7,12 +7,18 @@ import {
   patchProductsController,
   postProductsController,
 } from "../../controller";
+import { validatedData } from "../../middlewares/validated.middlewares";
+import { patchProductSchema, productsSchema } from "../../schemas";
 
 export const productsRouter: Router = Router();
 
-productsRouter.post("/", postProductsController);
+productsRouter.post("/", validatedData(productsSchema), postProductsController);
 productsRouter.get("/", getAllProductsController);
 productsRouter.get("/:id", getByIdProductsController);
 productsRouter.get("/category/:category", getByCategoryProductsController);
-productsRouter.patch("/:id", patchProductsController);
+productsRouter.patch(
+  "/:id",
+  validatedData(patchProductSchema),
+  patchProductsController
+);
 productsRouter.delete("/:id", deleteProductsController);
