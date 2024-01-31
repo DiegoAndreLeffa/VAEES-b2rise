@@ -5,4 +5,20 @@ import {
   tReturnProductsAll,
 } from "./products/products.interfaces";
 
-export { tProducts, tReturnProducts, tPatchProducts, tReturnProductsAll };
+import {
+  tPatchUsers,
+  tReturnAllUsers,
+  tReturnUsers,
+  tUsers,
+} from "./users/users.interfaces";
+
+export {
+  tProducts,
+  tReturnProducts,
+  tPatchProducts,
+  tReturnProductsAll,
+  tUsers,
+  tReturnUsers,
+  tPatchUsers,
+  tReturnAllUsers,
+};
