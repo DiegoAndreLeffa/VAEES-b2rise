@@ -1,5 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  BeforeInsert,
+} from "typeorm";
 import { PurchaseOrder } from "..";
+import { hashSync } from "bcryptjs";
 
 @Entity()
 export class Users {
@@ -23,4 +30,9 @@ export class Users {
 
   @OneToMany(() => PurchaseOrder, (purchaseOrder) => purchaseOrder.user_id)
   purchaseOrder: PurchaseOrder[];
+
+  @BeforeInsert()
+  hashPass() {
+    this.password = hashSync(this.password, 9);
+  }
 }
