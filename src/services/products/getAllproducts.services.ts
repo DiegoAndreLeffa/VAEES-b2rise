@@ -20,10 +20,14 @@ export const listAllProductsService = async (
   const productsRepository: Repository<Products> =
     AppDataSource.getRepository(Products);
 
+  const normalizedCategory = category?.toLowerCase();
+
   const queryBuilder = productsRepository.createQueryBuilder("product");
 
-  if (category) {
-    queryBuilder.andWhere("product.category = :category", { category });
+  if (normalizedCategory) {
+    queryBuilder.andWhere("LOWER(product.category) = :category", {
+      category: normalizedCategory,
+    });
   }
 
   if (title) {
