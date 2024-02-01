@@ -4,6 +4,7 @@ import {
   Column,
   OneToMany,
   BeforeInsert,
+  BeforeUpdate,
 } from "typeorm";
 import { PurchaseOrder } from "..";
 import { hashSync } from "bcryptjs";
@@ -19,7 +20,7 @@ export class Users {
   @Column({ type: "varchar", length: 50 })
   username: string;
 
-  @Column({ type: "varchar", length: 50 })
+  @Column({ type: "varchar" })
   password: string;
 
   @Column({ type: "varchar", length: 50 })
@@ -32,6 +33,7 @@ export class Users {
   purchaseOrder: PurchaseOrder[];
 
   @BeforeInsert()
+  @BeforeUpdate()
   hashPass() {
     this.password = hashSync(this.password, 9);
   }

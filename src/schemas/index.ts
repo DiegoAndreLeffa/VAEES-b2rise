@@ -9,6 +9,7 @@ import {
   patchUserSchema,
   returnAllUsersSchema,
   returnUserSchema,
+  returnuserSchemPasswordOmit,
   userSchema,
 } from "./users/user.schames";
 
@@ -21,4 +22,5 @@ export {
   returnUserSchema,
   returnAllUsersSchema,
   patchUserSchema,
+  returnuserSchemPasswordOmit,
 };

@@ -2,7 +2,7 @@ import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
 import { Users } from "../../entities";
 import { tReturnUsers, tUsers } from "../../interfaces";
-import { returnUserSchema } from "../../schemas";
+import { returnuserSchemPasswordOmit } from "../../schemas";
 
 export const postUserServices = async (
   userData: tUsers
@@ -15,7 +15,7 @@ export const postUserServices = async (
 
   await userRepository.save(user);
 
-  const newUser = returnUserSchema.parse(user);
+  const newUser = returnuserSchemPasswordOmit.parse(user);
 
   return newUser;
 };
