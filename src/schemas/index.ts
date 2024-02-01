@@ -4,6 +4,10 @@ import {
   returnAllProductsSchema,
   returnProductsSchema,
 } from "./products/productsSchema";
+import {
+  purchaseOrderSchema,
+  returnPurchaseOrderSchema,
+} from "./purchaseOrder/purchaseOrder.schemas";
 
 import {
   patchUserSchema,
@@ -23,4 +27,6 @@ export {
   returnAllUsersSchema,
   patchUserSchema,
   returnuserSchemPasswordOmit,
+  purchaseOrderSchema,
+  returnPurchaseOrderSchema,
 };
