@@ -2,7 +2,7 @@ import { Repository, Between, LessThan, MoreThan } from "typeorm";
 import { PurchaseOrderItem } from "../../entities";
 import { AppDataSource } from "../../data-source";
 
-interface FilterOptions {
+export interface FilterOptions {
   startDate?: Date;
   endDate?: Date;
   minPrice?: number;

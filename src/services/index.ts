@@ -4,6 +4,8 @@ import { getByCategoryProductsService } from "./products/getByCategory.services"
 import { getByIdProductsService } from "./products/getByIdProducts.services";
 import { patchProductsService } from "./products/patchProducts.services";
 import { postProductsService } from "./products/postProducts.services";
+import { getHystoryPurchaseOrders } from "./purchaseOrders/getPurchaseOrders.services";
+import { postPurchaseOrderServices } from "./purchaseOrders/postPurchaseOrders.services";
 import { deleteUsersServices } from "./users/deleteUser.services";
 import { getAllUsersServices } from "./users/getAllUser.services";
 import { getByIdUsersServices } from "./users/getByIdUsers.services";
@@ -22,4 +24,6 @@ export {
   getAllUsersServices,
   getByIdUsersServices,
   deleteUsersServices,
+  postPurchaseOrderServices,
+  getHystoryPurchaseOrders,
 };
