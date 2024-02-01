@@ -7,6 +7,10 @@ import {
   postProductsController,
 } from "./products/products.controller";
 import {
+  getPurchaseOrdersControllers,
+  postPurchaseOrdersControllers,
+} from "./purchaseOrders/purchaseOrders.services";
+import {
   deleteUserController,
   getAllUserController,
   getByIdUserController,
@@ -26,4 +30,6 @@ export {
   getByIdUserController,
   patchUserController,
   deleteUserController,
+  postPurchaseOrdersControllers,
+  getPurchaseOrdersControllers,
 };
