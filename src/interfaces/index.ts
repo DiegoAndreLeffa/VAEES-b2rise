@@ -6,6 +6,11 @@ import {
 } from "./products/products.interfaces";
 
 import {
+  tPurchaseOrders,
+  tReturnPurchaseOrders,
+} from "./purchaseOrders/purchaseOrders.interfaces";
+
+import {
   tPatchUsers,
   tReturnAllUsers,
   tReturnUsers,
@@ -21,4 +26,6 @@ export {
   tReturnUsers,
   tPatchUsers,
   tReturnAllUsers,
+  tPurchaseOrders,
+  tReturnPurchaseOrders,
 };

@@ -1,6 +1,5 @@
 import { z } from "zod";
 import {
-  patchUserSchema,
   returnAllUsersSchema,
   returnUserSchema,
   returnuserSchemPasswordOmit,
