@@ -16,8 +16,11 @@ export class PurchaseOrderItem {
   @JoinColumn({ name: "product_id" })
   product: Products;
 
-  @ManyToOne(() => PurchaseOrder)
-  @JoinColumn({ name: "purchase_order_id" })
+  @ManyToOne(
+    () => PurchaseOrder,
+    (purchaseOrder) => purchaseOrder.purchaseOrderItem
+  )
+  @JoinColumn()
   purchaseOrder: PurchaseOrder;
 
   @Column({ type: "integer" })
