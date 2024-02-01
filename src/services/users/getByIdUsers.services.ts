@@ -2,7 +2,7 @@ import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
 import { Users } from "../../entities";
 import { tReturnUsers } from "../../interfaces";
-import { returnUserSchema } from "../../schemas";
+import { returnuserSchemPasswordOmit } from "../../schemas";
 import { AppError } from "../../errors";
 
 export const getByIdUsersServices = async (
@@ -16,7 +16,7 @@ export const getByIdUsersServices = async (
     throw new AppError("User not exists!", 404);
   }
 
-  const user = returnUserSchema.parse(userId);
+  const user = returnuserSchemPasswordOmit.parse(userId);
 
   return user;
 };

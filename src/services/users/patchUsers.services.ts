@@ -3,7 +3,7 @@ import { tPatchUsers, tReturnUsers, tUsers } from "../../interfaces";
 import { Users } from "../../entities";
 import { AppDataSource } from "../../data-source";
 import { AppError } from "../../errors";
-import { returnUserSchema } from "../../schemas";
+import { returnUserSchema, returnuserSchemPasswordOmit } from "../../schemas";
 
 export const patchUsersServices = async (
   userData: tUsers,
@@ -26,7 +26,7 @@ export const patchUsersServices = async (
 
   await usersRepository.save(user);
 
-  const newUser = returnUserSchema.parse(user);
+  const newUser = returnuserSchemPasswordOmit.parse(user);
 
   return newUser;
 };
