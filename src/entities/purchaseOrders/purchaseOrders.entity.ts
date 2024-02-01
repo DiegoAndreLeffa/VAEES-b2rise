@@ -4,8 +4,9 @@ import {
   Column,
   ManyToOne,
   JoinColumn,
+  OneToMany,
 } from "typeorm";
-import { Users } from "..";
+import { PurchaseOrderItem, Users } from "..";
 
 @Entity()
 export class PurchaseOrder {
@@ -18,4 +19,10 @@ export class PurchaseOrder {
 
   @Column({ type: "timestamp" })
   date: Date;
+
+  @OneToMany(
+    () => PurchaseOrderItem,
+    (purchaseOrderItem) => purchaseOrderItem.purchaseOrder
+  )
+  purchaseOrderItem: PurchaseOrderItem;
 }
